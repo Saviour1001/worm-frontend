@@ -42,13 +42,13 @@ async function useWormframe() {
   console.log("Tx:", tx);
 }
 
-useWormframe();
+// useWormframe();
 
 async function useSendNativeCrossChainDeposit() {
-  const destinationChainId = 4;
+  const destinationChainId = 14;
   const recipient = "0xdE38fe35D322a6c1331F8836e25F650BE93F35f3";
   const amount = ethers.parseEther("0.01");
-  const targetTokenAddress = "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd";
+  const targetTokenAddress = "0x898471a82737dFFfB61915F9e8381e279076D72b";
 
   const estimateFees = await contract.estimateFees(destinationChainId);
   console.log("Estimate Fees:", estimateFees);
@@ -65,19 +65,6 @@ async function useSendNativeCrossChainDeposit() {
   );
 
   console.log("Tx:", tx);
-
-  // const tx = await contract.sendNativeCrossChainDeposit({
-  //     value: ethers
-  // },
-  //   destinationChainId,
-  //   targetTokenAddress,
-  //   recipient,
-  //   amount
-  // );
-
-  //   console.log("Tx:", tx);
 }
 
-// console.log(userWallet.address);
-
-// useSendNativeCrossChainDeposit();
+useSendNativeCrossChainDeposit();
