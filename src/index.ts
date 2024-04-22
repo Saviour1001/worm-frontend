@@ -4,8 +4,7 @@ const WormframeContractAddress = "0x6C53Df4624a68185b1b9F54FCF29c8Ca6D2452BA";
 
 import { WormFrameABI } from "./consts";
 
-const privateKey =
-  "0x0efac52d7563cc7c585e029fa44cd97ed39c39016902a7f141cd278f9452b82b";
+const privateKey = "YOUR_PRIVATE_KEY";
 
 let provider = new ethers.JsonRpcProvider(
   "https://api.avax-test.network/ext/bc/C/rpc"
