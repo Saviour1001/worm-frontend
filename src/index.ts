@@ -1,16 +1,16 @@
 import { ethers } from "ethers";
 
-const WormframeContractAddress = "0x6C53Df4624a68185b1b9F54FCF29c8Ca6D2452BA";
+const WormframeContractAddress = "0x830566dc7d79114ec3A75B346fbCAbB7980dA403";
 
 import { WormFrameABI } from "./consts";
 
-const privateKey = "YOUR_PRIVATE_KEY";
+const privateKey = "YOUR KEY HERE";
 
-let provider = new ethers.JsonRpcProvider(
-  "https://api.avax-test.network/ext/bc/C/rpc"
-);
+let provider = new ethers.JsonRpcProvider("https://rpc.ankr.com/optimism");
 
 let userWallet = new ethers.Wallet(privateKey, provider);
+
+console.log("Address:", userWallet.address);
 
 let contract = new ethers.Contract(
   WormframeContractAddress,
@@ -66,4 +66,5 @@ async function useSendNativeCrossChainDeposit() {
   console.log("Tx:", tx);
 }
 
-useSendNativeCrossChainDeposit();
+getQuote(4);
+// useSendNativeCrossChainDeposit();
