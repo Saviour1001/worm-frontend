@@ -1,12 +1,15 @@
 import { ethers } from "ethers";
 
-const WormframeContractAddress = "0x830566dc7d79114ec3A75B346fbCAbB7980dA403";
+const WormframeContractAddress = "0x6C53Df4624a68185b1b9F54FCF29c8Ca6D2452BA";
 
 import { WormFrameABI } from "./consts";
 
-const privateKey = "YOUR KEY HERE";
+const privateKey =
+  "0x0efac52d7563cc7c585e029fa44cd97ed39c39016902a7f141cd278f9452b82b";
 
-let provider = new ethers.JsonRpcProvider("https://rpc.ankr.com/optimism");
+let provider = new ethers.JsonRpcProvider(
+  "https://avalanche-fuji.blockpi.network/v1/rpc/public	"
+);
 
 let userWallet = new ethers.Wallet(privateKey, provider);
 
@@ -44,10 +47,10 @@ async function useWormframe() {
 // useWormframe();
 
 async function useSendNativeCrossChainDeposit() {
-  const destinationChainId = 14;
+  const destinationChainId = 4;
   const recipient = "0xdE38fe35D322a6c1331F8836e25F650BE93F35f3";
   const amount = ethers.parseEther("0.01");
-  const targetTokenAddress = "0x898471a82737dFFfB61915F9e8381e279076D72b";
+  const targetTokenAddress = "0xe94AaBAdB6F833f65B8A9AdDD030985B775188c9";
 
   const estimateFees = await contract.estimateFees(destinationChainId);
   console.log("Estimate Fees:", estimateFees);
@@ -68,3 +71,10 @@ async function useSendNativeCrossChainDeposit() {
 
 getQuote(4);
 // useSendNativeCrossChainDeposit();
+
+async function useReceiveWormholeMessages() {
+  const destinationChainId = 4;
+  const recipient = "0xdE38fe35D322a6c1331F8836e25F650BE93F35f3";
+  const amount = ethers.parseEther("0.01");
+  const targetTokenAddress = "0xe94AaBAdB6F833f65B8A9AdDD030985B775188c9";
+}
